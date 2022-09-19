@@ -3,10 +3,10 @@ settings:
   url: 'https://status-page.eidam.dev' # used for Slack messages
   logo: logo-192x192.png # image in ./public/ folder
   daysInHistogram: 90 # number of days you want to display in histogram
-  collectResponseTimes: true # collects avg response times from CRON locations
+  collectResponseTimes: false # experimental feature, enable only for <5 monitors or on paid plans
 
   allmonitorsOperational: 'All Systems Operational'
-  notAllmonitorsOperational: 'Not All Systems Operational'
+  notAllmonitorsOperational: 'Some Systems Non-Operational'
   monitorLabelOperational: 'Operational'
   monitorLabelNotOperational: 'Not Operational'
   monitorLabelNoData: 'No data'
@@ -15,25 +15,23 @@ settings:
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
 monitors:
-  - id: workers-cloudflare-com # unique identifier
-    name: workers.cloudflare.com
-    description: 'You write code. They handle the rest.' # default=empty
-    url: 'https://workers.cloudflare.com/' # URL to fetch
-    method: GET # default=GET
-    expectStatus: 200 # operational status, default=200
-    followRedirect: false # should fetch follow redirects, default=false
-    linkable: false # allows the title to be a link, default=true
+  - id: 280180d9ce48f0157494d88c892d91ea
+    name: Motor_Emails
+    url: 'https://vchiemails.servicebus.windows.net/'
 
-  - id: www-cloudflare-com
-    name: www.cloudflare.com
-    description: 'Built for anything connected to the Internet.'
-    url: 'https://www.cloudflare.com'
-    method: GET
-    expectStatus: 200
-    linkable: true # allows the title to be a link, default=true
+  - id: f6fe225dd3d53a4ee4f2feb8c07cccca
+    name: Salesforce_Prod
+    url: 'https://na137.salesforce.com/'
 
-  - id: blog-cloudflare-com
-    name: The Cloudflare Blog
-    url: 'https://blog.cloudflare.com/'
-    method: GET
-    expectStatus: 200
+  - id: 4bf799c782fcdcfa0220b3577c867cf3
+    name: Mediclic_PagPublica
+    url: 'https://www.mediclic.cl/'
+
+  - id: d44a37fa436c86e085898df519efd679
+    name: Portal_Dev
+    url: 'https://portaldev.mediconecta.com/'
+
+  - id: 443db5ad1c212cd439bc88297fd550c0
+    name: Portal_Mediclic
+    url: 'https://consultas.mediclic.cl/'
+
